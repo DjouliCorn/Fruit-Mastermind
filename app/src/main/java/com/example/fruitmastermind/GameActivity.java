@@ -1,6 +1,5 @@
 package com.example.fruitmastermind;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -30,8 +29,6 @@ import com.example.fruitmastermind.GameClasses.Fruit;
 import com.example.fruitmastermind.GameClasses.FruitArray;
 import com.example.fruitmastermind.GameClasses.ResultClues;
 
-import org.w3c.dom.Text;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -49,8 +46,7 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
     //Instantiate an empty list for the recycler
 
     List<Drawable[]> paramForCycle = new ArrayList<Drawable[]>();
-    List<Clue[]> param2ForCycle = new ArrayList<Clue[]>();
-    List<List> combinedParams = new List<List>;
+    List<TextView[]> param2ForCycle = new ArrayList<TextView[]>();
     int posVH = 0;
     RecyclerView listTries;
     CustomAdapter myAdapter = new CustomAdapter(paramForCycle);
@@ -281,7 +277,7 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
                 Tcomplete[2] = T3;
                 Tcomplete[3] = T4;
 
-
+                param2ForCycle.add(Tcomplete);
             }
 
             public ImageView[] getImgView() {
