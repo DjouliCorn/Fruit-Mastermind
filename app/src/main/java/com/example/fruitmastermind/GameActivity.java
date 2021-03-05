@@ -49,6 +49,8 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
     //Instantiate an empty list for the recycler
 
     List<Drawable[]> paramForCycle = new ArrayList<Drawable[]>();
+    List<Clue[]> param2ForCycle = new ArrayList<Clue[]>();
+    List<List> combinedParams = new List<List>;
     int posVH = 0;
     RecyclerView listTries;
     CustomAdapter myAdapter = new CustomAdapter(paramForCycle);
@@ -245,10 +247,11 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
             ImageView imgView2;
             ImageView imgView3;
             ImageView imgView4;
-            public TextView T1;
-            public TextView T2;
-            public TextView T3;
-            public TextView T4;
+            TextView T1;
+            TextView T2;
+            TextView T3;
+            TextView T4;
+            private final TextView[] Tcomplete = new TextView[4];
 
             public ViewHolder(View view) {
                 super(view);
@@ -272,12 +275,23 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
                 imgView[1] = imgView2;
                 imgView[2] = imgView3;
                 imgView[3] = imgView4;
+
+                Tcomplete[0] = T1;
+                Tcomplete[1] = T2;
+                Tcomplete[2] = T3;
+                Tcomplete[3] = T4;
+
+
             }
 
             public ImageView[] getImgView() {
                 return imgView;
             }
 
+
+            public TextView[] getTcomplete() {
+                return Tcomplete;
+            }
 
             public LinearLayout getPosFruit(){
                 return  posFruit;
@@ -315,10 +329,7 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
 
 
             TextView[] tView = new TextView[4];
-            tView[0] = viewHolder.T1;
-            tView[1] = viewHolder.T2;
-            tView[2] = viewHolder.T3;
-            tView[3] = viewHolder.T4;
+            tView = viewHolder.getTcomplete();
 
 
             ResultClues rC2 = new ResultClues();
